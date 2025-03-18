@@ -1,5 +1,7 @@
 from fastapi import APIRouter
 
+from app.api.api_v1.schedules.handlers import router as schedule_router
+from app.api.api_v1.users.handlers import router as user_router
 from app.core import settings
 
 from .some_endpoint import router as endpoint
@@ -8,7 +10,7 @@ router = APIRouter(
     prefix=settings.api.v1.prefix,
 )
 
-for rout in (endpoint,):
+for rout in (endpoint, user_router, schedule_router):
     router.include_router(
         router=rout,
     )
