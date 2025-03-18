@@ -4,7 +4,9 @@ from dishka import Provider, Scope, from_context, provide
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database.db_helper import DataBaseHelper
+from app.core.repositories.users import IUserRepository, UserRepository
 from app.core.settings import Settings
+from app.core.use_cases.users import CreateUserInteractor
 
 
 class SQLAlchemyProvider(Provider):
@@ -31,3 +33,9 @@ class SQLAlchemyProvider(Provider):
     ) -> AsyncGenerator[AsyncSession, None]:
         async with database_helper.session_factory() as session:
             yield session
+
+
+class UseCasesProvider(Provider):
+    scope = Scope.REQUEST
+    user_repository = provide(IUserRepository, provides=UserRepository)
+    create_user = provide(CreateUserInteractor)
