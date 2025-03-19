@@ -12,7 +12,7 @@ class Schedule(IntIdPkMixin, Base):
     taking_per_day: Mapped[int]
     duration: Mapped[int]
     user_id: Mapped[int] = mapped_column(
-        ForeignKey("user.id", on_delete="CASCADE"),
+        ForeignKey("user.id", ondelete="CASCADE"),
     )
 
     # Связь с таблицей User (многие к одному)
