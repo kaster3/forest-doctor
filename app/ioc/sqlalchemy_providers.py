@@ -4,8 +4,10 @@ from dishka import Provider, Scope, from_context, provide
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database.db_helper import DataBaseHelper
+from app.core.repositories.schedule import IScheduleRepository, ScheduleRepository
 from app.core.repositories.users import IUserRepository, UserRepository
 from app.core.settings import Settings
+from app.core.use_cases.schedules import CreateScheduleInterator
 from app.core.use_cases.users import CreateUserInteractor
 
 
@@ -39,3 +41,6 @@ class UseCasesProvider(Provider):
     scope = Scope.REQUEST
     user_repository = provide(IUserRepository, provides=UserRepository)
     create_user = provide(CreateUserInteractor)
+
+    schedule_repository = provide(IScheduleRepository, provides=ScheduleRepository)
+    create_schedule = provide(CreateScheduleInterator)
