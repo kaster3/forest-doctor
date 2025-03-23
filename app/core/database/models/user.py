@@ -10,6 +10,8 @@ if TYPE_CHECKING:
 
 
 class User(Base):
+    # Выбрал BigInteger потому что меньше весит, чем строка, но возможно
+    # лучше ее выбрать так как полис может начинаться с 0 (0000 0000 0000 0000)
     policy: Mapped[int] = mapped_column(BigInteger, primary_key=True)
     # Связь
     schedules: Mapped[list["Schedule"]] = relationship(back_populates="user")
