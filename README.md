@@ -9,3 +9,5 @@ How launch the project?
 3) load fixtures
 
        docker exec -it app python app/commands/load_fixtures.py
+
+To see the result follow this link http://0.0.0.0:8000/docs
