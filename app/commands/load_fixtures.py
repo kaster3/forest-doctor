@@ -41,6 +41,7 @@ load_info = {
 
 
 async def main(settings: Settings) -> None:
+
     container = init_async_container(settings=settings)
     async with container() as request_container:
         for key, value in load_info.items():
@@ -48,6 +49,8 @@ async def main(settings: Settings) -> None:
             interactor = await request_container.get(value.get("interactor_class"))
             with open(value.get("fixtures_path"), "r", encoding="utf-8") as file:
                 data = json.load(file)
+                # Тут можно было бы создать отдельные интеракторы для загрузки пачками, а не по 1,
+                # но не уложился по времени
                 for obj in data:
                     schema = value.get("schema")
                     schema_obj = schema(**obj)
