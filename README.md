@@ -3,17 +3,9 @@ How launch the project?
 1) up containers by this command
 
        docker compose --env-file .env.docker up -d
+2) make migrations
 
-2) and open this link http://0.0.0.0:8000/
+       docker exec -it app alembic --config app/alembic.ini upgrade head
+3) load fixtures
 
-
-
-How to test this?
-
-1) firstly up test containers
-
-        docker compose -f tests/docker-compose.test.yaml --env-file tests/.env.docker up -d
-
-2) run tests
-
-        pytest
+       docker exec -it app python app/commands/load_fixtures.py
