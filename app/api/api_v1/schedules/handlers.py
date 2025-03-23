@@ -2,13 +2,16 @@ from dishka.integrations.fastapi import FromDishka, inject
 from fastapi import APIRouter, status
 
 from app.api.api_v1.schedules.schemas import ScheduleCreateRequest, ScheduleCreateResponse
-from app.core.use_cases.schedules import CreateScheduleInterator
-from app.core.use_cases.users import CreateUserInteractor
+from app.core.use_cases.schedules import (
+    CreateScheduleInterator,
+    GetScheduleByIdsInteractor,
+    GetSchedulesByPolicy,
+)
 
 router = APIRouter(tags=["schedules"])
 
 
-#  http://localhost:8000/api/v1/schedule
+# http://localhost:8000/api/v1/schedule
 @router.post(
     path="/schedule",
     response_model=ScheduleCreateResponse,
@@ -21,27 +24,29 @@ async def create_schedule(
     return await interactor(schedule_in=schedule_in)
 
 
-#  http://localhost:8000/api/v1/schedules?user_id=
+# http://localhost:8000/api/v1/schedules?user_id=
 @router.get(
     "/schedules/{user_policy}",
     response_model=list[int],
     status_code=status.HTTP_200_OK,
 )
 @inject
-async def get_schedules_by_policy(user_policy: int, interactor: FromDishka[CreateUserInteractor]):
-    pass
+async def get_schedules_by_policy(user_policy: int, interactor: FromDishka[GetSchedulesByPolicy]):
+    return await interactor(user_policy=user_policy)
 
 
-#  http://localhost:8000/api/v1/schedule?user_id=&schedule_id=
+# http://localhost:8000/api/v1/schedule?user_id=&schedule_id=
 @router.get(
     "/schedule/{user_policy}/{schedule_id}",
-    response_model=ScheduleCreateResponse,
     status_code=status.HTTP_200_OK,
 )
 @inject
 async def get_schedule_by_policy_and_id(
     user_policy: int,
     schedule_id: int,
-    interactor: FromDishka[CreateUserInteractor],
+    interactor: FromDishka[GetScheduleByIdsInteractor],
 ):
-    pass
+    return await interactor(
+        user_policy=user_policy,
+        schedule_id=schedule_id,
+    )
