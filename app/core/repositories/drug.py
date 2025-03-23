@@ -1,6 +1,7 @@
 from abc import abstractmethod
 from typing import Protocol
 
+from asyncpg import UniqueViolationError
 from sqlalchemy.exc import IntegrityError
 
 from app.core.database import Drug
@@ -27,12 +28,11 @@ class IDrugRepository(Repository):
     async def create(self, name: str) -> Drug | None:
         drug = Drug(name=name)
         self.session.add(drug)
-
         try:
             await self.session.commit()
-        except IntegrityError:
-            await self.session.rollback()
-            raise DrugAlreadyExistsError(f"Drug with name {name} already exists")
+        except IntegrityError as error:
+            if isinstance(error.orig.__cause__, UniqueViolationError):
+                raise DrugAlreadyExistsError(f"Drug with name {name} already exists")
         return drug
 
     async def get_by_name(self, name: str) -> Drug | None:
