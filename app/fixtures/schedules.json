@@ -6,16 +6,46 @@
         "drug_name": "Аспирин"
     },
     {
+        "taking_per_day": 1,
+        "duration": 5,
+        "user_id": 1000000000000000,
+        "drug_name": "Парацетамол"
+    },
+      {
+        "taking_per_day": 1,
+        "duration": 5,
+        "user_id": 1000000000000000,
+        "drug_name": "Ибупрофен"
+    },
+    {
         "taking_per_day": 3,
         "duration": 10,
         "user_id": 1000000000000001,
         "drug_name": "Ибупрофен"
     },
     {
+        "taking_per_day": 2,
+        "duration": 14,
+        "user_id": 1000000000000001,
+        "drug_name": "Амоксициллин"
+    },
+    {
         "taking_per_day": 1,
         "duration": 5,
         "user_id": 1000000000000002,
         "drug_name": "Парацетамол"
+    },
+    {
+        "taking_per_day": 2,
+        "duration": 7,
+        "user_id": 1000000000000002,
+        "drug_name": "Аспирин"
+    },
+    {
+        "taking_per_day": 1,
+        "duration": 30,
+        "user_id": 1000000000000003,
+        "drug_name": "Лизиноприл"
     },
     {
         "taking_per_day": 2,
@@ -32,8 +62,32 @@
     {
         "taking_per_day": 2,
         "duration": 21,
+        "user_id": 1000000000000004,
+        "drug_name": "Метформин"
+    },
+    {
+        "taking_per_day": 6,
+        "duration": 21,
+        "user_id": 1000000000000004,
+        "drug_name": "Амоксициллин"
+    },
+    {
+        "taking_per_day": 1,
+        "duration": 30,
         "user_id": 1000000000000005,
         "drug_name": "Метформин"
+    },
+    {
+        "taking_per_day": 1,
+        "duration": 30,
+        "user_id": 1000000000000005,
+        "drug_name": "Аторвастатин"
+    },
+    {
+        "taking_per_day": 1,
+        "duration": 14,
+        "user_id": 1000000000000006,
+        "drug_name": "Омепразол"
     },
     {
         "taking_per_day": 1,
@@ -43,21 +97,39 @@
     },
     {
         "taking_per_day": 1,
-        "duration": 14,
+        "duration": 30,
         "user_id": 1000000000000007,
         "drug_name": "Омепразол"
     },
     {
         "taking_per_day": 1,
         "duration": 30,
-        "user_id": 1000000000000008,
+        "user_id": 1000000000000007,
         "drug_name": "Симвастатин"
     },
     {
         "taking_per_day": 1,
         "duration": 30,
+        "user_id": 1000000000000008,
+        "drug_name": "Лозартан"
+    },
+    {
+        "taking_per_day": 1,
+        "duration": 60,
         "user_id": 1000000000000009,
         "drug_name": "Лозартан"
+    },
+    {
+        "taking_per_day": 1,
+        "duration": 60,
+        "user_id": 1000000000000009,
+        "drug_name": "Левотироксин"
+    },
+    {
+        "taking_per_day": 3,
+        "duration": 14,
+        "user_id": 1000000000000010,
+        "drug_name": "Габапентин"
     },
     {
         "taking_per_day": 1,
@@ -65,11 +137,29 @@
         "user_id": 1000000000000010,
         "drug_name": "Левотироксин"
     },
+        {
+        "taking_per_day": 3,
+        "duration": 30,
+        "user_id": 1000000000000010,
+        "drug_name": "Аспирин"
+    },
     {
         "taking_per_day": 3,
         "duration": 14,
         "user_id": 1000000000000011,
         "drug_name": "Габапентин"
+    },
+    {
+        "taking_per_day": 1,
+        "duration": 30,
+        "user_id": 1000000000000011,
+        "drug_name": "Гидрохлоротиазид"
+    },
+    {
+        "taking_per_day": 2,
+        "duration": 30,
+        "user_id": 1000000000000012,
+        "drug_name": "Метопролол"
     },
     {
         "taking_per_day": 1,
@@ -86,14 +176,38 @@
     {
         "taking_per_day": 1,
         "duration": 30,
+        "user_id": 1000000000000013,
+        "drug_name": "Амлодипин"
+    },
+    {
+        "taking_per_day": 1,
+        "duration": 7,
+        "user_id": 1000000000000014,
+        "drug_name": "Преднизолон"
+    },
+    {
+        "taking_per_day": 1,
+        "duration": 30,
         "user_id": 1000000000000014,
         "drug_name": "Амлодипин"
+    },
+    {
+        "taking_per_day": 1,
+        "duration": 30,
+        "user_id": 1000000000000015,
+        "drug_name": "Сертралин"
     },
     {
         "taking_per_day": 1,
         "duration": 7,
         "user_id": 1000000000000015,
         "drug_name": "Преднизолон"
+    },
+    {
+        "taking_per_day": 2,
+        "duration": 10,
+        "user_id": 1000000000000016,
+        "drug_name": "Трамадол"
     },
     {
         "taking_per_day": 1,
@@ -103,9 +217,21 @@
     },
     {
         "taking_per_day": 2,
+        "duration": 14,
+        "user_id": 1000000000000017,
+        "drug_name": "Сальбутамол"
+    },
+    {
+        "taking_per_day": 2,
         "duration": 10,
         "user_id": 1000000000000017,
         "drug_name": "Трамадол"
+    },
+    {
+        "taking_per_day": 1,
+        "duration": 30,
+        "user_id": 1000000000000018,
+        "drug_name": "Пантопразол"
     },
     {
         "taking_per_day": 2,
@@ -118,5 +244,17 @@
         "duration": 30,
         "user_id": 1000000000000019,
         "drug_name": "Пантопразол"
+    },
+    {
+        "taking_per_day": 1,
+        "duration": 30,
+        "user_id": 1000000000000019,
+        "drug_name": "Омепразол"
+    },
+    {
+        "taking_per_day": 1,
+        "duration": 30,
+        "user_id": 1000000000000019,
+        "drug_name": "Амлодипин"
     }
 ]
